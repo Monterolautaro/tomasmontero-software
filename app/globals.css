@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─────────────────────────────────────────────────────────────────
+     PRIMARY – Navy Blue (color de marca y confianza)
+     Escala completa de 50 a 900 para fondos, textos, íconos y bordes.
+  ───────────────────────────────────────────────────────────────── */
+  --color-primary-50:  #EEF5FB;   /* fondos muy sutiles, chip labels   */
+  --color-primary-100: #D4E5F7;   /* bordes de cards, anillos de foco  */
+  --color-primary-200: #AAC9ED;   /* placeholder decorativo             */
+  --color-primary-300: #7AAAD8;   /* íconos de footer, hover claro      */
+  --color-primary-400: #4A80C4;   /* acento secundario, hover sobre dark*/
+  --color-primary-500: #2060B0;   /* íconos principales, CheckCircle    */
+  --color-primary-600: #1B4D8E;   /* texto de énfasis, número del paso  */
+  --color-primary-700: #163D72;   /* texto activo en nav                */
+  --color-primary-800: #112D55;   /* bg botón secondary / nav CTA       */
+  --color-primary-900: #0D1F3C;   /* navy principal (titulares, footer) */
+
+  /* Alias backward-compat → apunta al navy principal */
+  --color-navy: #0D1F3C;
+
+  /* ─────────────────────────────────────────────────────────────────
+     SECONDARY – Steel Blue (color de soporte, UI complementaria)
+     Para cards secundarias, badges de soporte, bordes de íconos.
+  ───────────────────────────────────────────────────────────────── */
+  --color-secondary-100: #D8E8F6;
+  --color-secondary-300: #8EB0D6;
+  --color-secondary-500: #4A6FA5;
+  --color-secondary-700: #2D4A66;
+
+  /* ─────────────────────────────────────────────────────────────────
+     CTA – Amber Orange (color de conversión y llamada a la acción)
+     Único color cálido de la paleta; alto contraste sobre navy.
+     Usado SOLO en botones de acción principal.
+  ───────────────────────────────────────────────────────────────── */
+  --color-cta-50:  #FFF7ED;
+  --color-cta-400: #F59E0B;
+  --color-cta-500: #D97706;
+  --color-cta-600: #B45309;
+
+  /* ─────────────────────────────────────────────────────────────────
+     SUCCESS / DANGER – colores semánticos para estados de UI
+  ───────────────────────────────────────────────────────────────── */
+  --color-success-100: #D1FAE5;
+  --color-success-700: #065F46;
+
+  --color-danger-100:  #FEE2E2;
+  --color-danger-700:  #991B1B;
+}
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #0D1F3C;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
