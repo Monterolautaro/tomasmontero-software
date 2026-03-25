@@ -23,8 +23,7 @@ export default function ServiciosPage() {
               Soluciones tecnológicas para problemas reales
             </h1>
             <p className="text-lg text-slate-600">
-              Servicios orientados a optimizar tu tiempo, automatizar procesos recurrentes y
-              mejorar la imagen profesional de tu negocio.
+              Servicios orientados a mejorar tu capacidad de venta. Mientras más alcance tenes, más vendes.
             </p>
           </div>
 
@@ -53,7 +52,7 @@ export default function ServiciosPage() {
                 </div>
                 <ul className="space-y-4">
                   {[
-                    "Lista para publicar en 24h",
+                    "Lista para publicar en menos de 24h",
                     "Diseño claro y directo",
                     "Estructura orientada al contacto",
                     "Perfecta adaptabilidad a celulares",

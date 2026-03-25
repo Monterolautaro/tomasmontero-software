@@ -11,7 +11,7 @@ export function Footer() {
               Tomas Montero<span className="text-cta-400">.</span>
             </Link>
             <p className="text-primary-300 max-w-sm leading-relaxed mb-6">
-              Desarrollo de software y soluciones web. Te ayudo a optimizar tus procesos, transmitir confianza y conectar mejor con tus clientes mediante tecnología.
+              Me enfoco en mejorar la presencia digital de tu negocio, para que puedas aumentar la cantidad de personas a las que llegan tus productos o servicios, y así aumentar tus ventas.
             </p>
           </div>
 
@@ -21,7 +21,7 @@ export function Footer() {
               <li><Link href="/" className="text-primary-300 hover:text-white transition-colors duration-200">Inicio</Link></li>
               <li><Link href="/servicios" className="text-primary-300 hover:text-white transition-colors duration-200">Servicios</Link></li>
               <li><Link href="/quien-soy" className="text-primary-300 hover:text-white transition-colors duration-200">Quién Soy</Link></li>
-              <li><Link href="/testimonios" className="text-primary-300 hover:text-white transition-colors duration-200">Testimonios</Link></li>
+              {/* <li><Link href="/testimonios" className="text-primary-300 hover:text-white transition-colors duration-200">Testimonios</Link></li> */}
             </ul>
           </div>
 

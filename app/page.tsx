@@ -122,9 +122,9 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Rentadoor", desc: "Sitio web para empresa de alquileres de propiedades." },
-              { title: "E-commerce", desc: "Tienda online con carrito y pasarela de pago." },
-              { title: "Contadora Silvina Montero", desc: "Sitio institucional para estudio contable." },
+              { title: "Rentadoor", desc: "Desarrollamos una aplicación de alquileres en Buenos Aires." },
+              { title: "E-commerce", desc: "Tienda online para vender dispositivos Apple." },
+              { title: "Estudio contable", desc: "Un sitio web profesional para estudio contable." },
             ].map((project, i) => (
               <div key={i} className="group cursor-pointer">
                 <div className="bg-white aspect-[4/3] rounded-2xl mb-6 overflow-hidden relative shadow-sm border border-slate-200 hover:shadow-md transition-shadow">

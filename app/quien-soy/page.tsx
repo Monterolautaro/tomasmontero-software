@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Code, Heart } from "lucide-react";
 
 export const metadata = {
@@ -19,15 +20,15 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            {/* Image Placeholder */}
-            <div className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden bg-primary-50 border-8 border-white shadow-xl">
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-primary-400">
-                <div className="w-24 h-24 mb-4 rounded-full bg-primary-100 flex items-center justify-center">
-                  <span className="text-4xl text-primary-500 font-bold">TM</span>
-                </div>
-                <p className="font-medium">Espacio para tu foto</p>
-                <p className="text-sm mt-1 opacity-70">(800x1000px recomendado)</p>
-              </div>
+            <div className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden bg-primary-100 border-8 border-white shadow-xl">
+              <Image
+                src="/escritorio_yo.JPG"
+                alt="Tomas Montero"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover"
+                priority
+              />
             </div>
 
             <div>
@@ -38,20 +39,14 @@ export default function AboutPage() {
 
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed mb-10">
                 <p>
-                  Soy desarrollador de software pero sobre todo, emprendedor. Me encanta combinar las distintas disciplinas para obtener
-                  resultados que integren lo mejor de ambos mundos; Ventas y IT. 
+                  Soy desarrollador de software y emprendedor, enfocado en ayudar a negocios a crecer combinando tecnología y estrategia comercial.
                 </p>
                 <p>
-                  A lo largo de mi carrera, he manejado negocios, trabajado en empresas y también cerrado contratos para desarrollar aplicaciones web.
-                  En todo este proceso, entendí algo importante: No importa el rubro, ni lo que hagas, 
+                  A lo largo de mi experiencia, trabajé tanto en proyectos propios como en entornos corporativos como Reale Seguros, lo que me llevó a entender algo bastante importante: no alcanza con tener un buen producto, si no llega a las personas correctas.
                 </p>
                 <p>
-                  Mi filosofía es clara:{" "}
-                  <strong className="font-semibold text-primary-900">
-                    la tecnología debe trabajar para vos, no al revés
-                  </strong>
-                  . Por eso me enfoco en entender a fondo las necesidades de cada proyecto antes de
-                  escribir la primera línea de código.
+                 Hoy me enfoco en resolver ese problema. No solo desarrollo páginas o aplicaciones, sino que analizo cada proyecto para entender a quién está dirigido y cómo hacerlo llegar de forma efectiva.
+                 Mi objetivo no es solo crear software, sino ayudarte a conseguir más clientes y mejorar la forma en que tu negocio se presenta y crece.
                 </p>
               </div>
 
