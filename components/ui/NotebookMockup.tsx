@@ -67,7 +67,7 @@ export const NotebookMockup: React.FC<NotebookMockupProps> = ({
       onMouseLeave={handleReset}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleReset}
-      className="relative w-full max-w-[500px] aspect-[16/10] mx-auto perspective-[1200px] py-10 touch-none"
+      className="relative w-full max-w-[480px] aspect-[1.4] mx-auto perspective-[1200px] py-2 touch-none"
       style={{ perspective: "1200px" }}
     >
       <motion.div
@@ -89,8 +89,8 @@ export const NotebookMockup: React.FC<NotebookMockupProps> = ({
       
         <div className="absolute inset-0 bg-slate-800 rounded-xl overflow-hidden shadow-2xl border-[6px] border-slate-900 flex flex-col">
          
-          <div className="h-6 bg-slate-900 flex items-center justify-center">
-            <div className="w-1.5 h-1.5 rounded-full bg-slate-700"></div>
+          <div className="h-4 bg-slate-900 flex items-center justify-center">
+            <div className="w-1 h-1 rounded-full bg-slate-700"></div>
           </div>
           
           <div className="flex-1 relative bg-white overflow-hidden">

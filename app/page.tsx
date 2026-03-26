@@ -123,22 +123,14 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Rentadoor", desc: "Desarrollamos una aplicación de alquileres en Buenos Aires.", image: "/rentadoor.png" },
-              { title: "E-commerce", desc: "Tienda online para vender dispositivos Apple." },
-              { title: "Estudio contable", desc: "Un sitio web profesional para estudio contable." },
+              { title: "Rentadoor", desc: "Desarrollamos una aplicación de alquileres en Buenos Aires.", image: "/rentadoor-real.png" },
+              { title: "E-commerce", desc: "Tienda online para vender dispositivos Apple.", image: "/ecommerce.png" },
+              { title: "Estudio contable", desc: "Un sitio web profesional para estudio contable.", image: "/estudio-contable.png" },
             ].map((project, i) => (
               <div key={i} className="group cursor-pointer">
-                {project.title === "Rentadoor" ? (
-                  <div className="mb-6 h-[300px] flex items-center justify-center">
-                    <NotebookMockup imageSrc={project.image || ""} alt={project.title} />
-                  </div>
-                ) : (
-                  <div className="bg-white aspect-[4/3] rounded-2xl mb-6 overflow-hidden relative shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-                    <div className="absolute inset-0 bg-navy/5 flex items-center justify-center group-hover:bg-navy/0 transition-colors">
-                      <span className="text-slate-400 font-medium">Proyecto {i + 1}</span>
-                    </div>
-                  </div>
-                )}
+                <div className="mb-6 h-[320px] flex items-center justify-center">
+                  <NotebookMockup imageSrc={project.image} alt={project.title} />
+                </div>
                 <h3 className="text-xl font-semibold text-navy mb-2">{project.title}</h3>
                 <p className="text-slate-600">{project.desc}</p>
               </div>

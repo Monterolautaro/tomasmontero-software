@@ -20,7 +20,7 @@ export default function ServiciosPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           <div className="text-center max-w-3xl mb-16">
             <h1 className="text-4xl md:text-5xl font-extrabold text-primary-900 tracking-tight mb-6">
-              Soluciones tecnológicas para problemas reales
+              Llegá a más clientes con soluciones tecnológicas
             </h1>
             <p className="text-lg text-slate-600">
               Servicios orientados a mejorar tu capacidad de venta. Mientras más alcance tenes, más vendes.
