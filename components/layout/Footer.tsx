@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MapPin, Mail, Phone } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 
 export function Footer() {
   return (
@@ -30,11 +31,11 @@ export function Footer() {
             <ul className="space-y-4 text-primary-300">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-secondary-300 shrink-0 mt-0.5" />
-                <span>Neuquén Capital, Argentina</span>
+                <span>Neuquén Capital</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-secondary-300 shrink-0" />
-                <a href="mailto:lautarotomas082@icloud.com" className="hover:text-white transition-colors duration-200">
+                <a href="mailto:lautarotomas082@icloud.com" className="hover:text-white transition-colors duration-200 break-all text-xs lg:text-sm">
                   lautarotomas082@icloud.com
                 </a>
               </li>
@@ -49,15 +50,20 @@ export function Footer() {
 
           <div className="md:col-span-2">
             <h3 className="font-semibold text-lg mb-6 text-primary-100">Redes</h3>
-            <div className="flex gap-4">
+            <div className="flex flex-col gap-6">
               <a 
                 href="https://www.linkedin.com/in/lautaro-tomas-montero/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg overflow-hidden border border-primary-700 hover:border-cta-400 transition-colors"
+                className="w-8 h-8 rounded-lg overflow-hidden hover:scale-110 transition-transform duration-200"
               >
                 <img src="/linkedin.png" alt="LinkedIn" className="w-full h-full object-cover" />
               </a>
+              <Link href="/#contact">
+                <Button variant="primary" size="sm" className="w-full text-xs">
+                  Contactame
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

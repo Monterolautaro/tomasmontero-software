@@ -9,7 +9,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className = "", variant = "primary", size = "md", ...props }, ref) => {
     const baseStyles =
-      "inline-flex items-center justify-center whitespace-nowrap rounded-lg font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
+      "inline-flex items-center justify-center whitespace-nowrap rounded-lg font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer";
 
     const variants = {
       // CTA principal – naranja ámbar: alto contraste sobre cualquier fondo
@@ -17,7 +17,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         "bg-cta-500 text-white hover:bg-cta-600 shadow-sm hover:shadow-md active:scale-[0.98]",
       // Acción secundaria importante – navy oscuro
       secondary:
-        "bg-primary-800 text-white hover:bg-primary-900 shadow-sm active:scale-[0.98]",
+        "bg-primary-800 text-white hover:bg-primary-700 shadow-sm active:scale-[0.98]",
       // Acción terciaria – borde navy, fondo blanco
       outline:
         "border border-primary-700 bg-white text-primary-700 hover:bg-primary-50 hover:border-primary-800 active:scale-[0.98]",
