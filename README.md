@@ -1,4 +1,4 @@
-# Tomas Montero | Desarrollo de Software 🚀
+# Tomas Montero | Desarrollo de Software
 
 Sitio web profesional y portafolio interactivo para **Tomas Montero**, enfocado en ofrecer soluciones tecnológicas que impulsan la conversión y el alcance de negocios digitales.
 
@@ -22,6 +22,7 @@ Sitio web profesional y portafolio interactivo para **Tomas Montero**, enfocado 
 ## 🎨 Sistema de Diseño (Navy & Amber)
 
 El sitio utiliza un sistema de diseño propio documentado para maximizar la jerarquía visual:
+
 - **Navy (#0D1F3C)**: Color primario para confianza y solidez institucional.
 - **Amber (#D97706)**: Color de contraste para Call-to-Action (CTA), diseñado para atrapar el ojo.
 - **Steel Blue**: Colores de soporte para profundidad visual.
@@ -29,11 +30,13 @@ El sitio utiliza un sistema de diseño propio documentado para maximizar la jera
 ## 🚀 Instalación y Desarrollo
 
 1. **Clonar el repositorio**:
+
    ```bash
    git clone https://github.com/Monterolautaro/tomasmontero-software.git
    ```
 
 2. **Instalar dependencias**:
+
    ```bash
    npm install
    ```
@@ -42,6 +45,7 @@ El sitio utiliza un sistema de diseño propio documentado para maximizar la jera
    Crea un archivo `.env` basado en `.env.example` con tus credenciales de SMTP para el formulario.
 
 4. **Iniciar servidor de desarrollo**:
+
    ```bash
    npm run dev
    ```

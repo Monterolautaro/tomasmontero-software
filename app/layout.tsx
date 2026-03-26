@@ -5,15 +5,41 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Tomas Montero | Desarrollo de Software",
+  metadataBase: new URL("https://tomasmontero.top"), 
+  title: {
+    default: "Tomas Montero | Desarrollo de Software",
+    template: "%s | Tomas Montero"
+  },
   description:
-    "Páginas web profesionales en 24h. Si tu negocio no está online, estás perdiendo clientes.",
+    "Soluciones tecnológicas de alto impacto. Páginas web profesionales, apps y optimización de procesos para negocios digitales.",
+  keywords: ["desarrollo de software", "páginas web", "Next.js", "Tomas Montero", "software Argentina", "digitalización de negocios"],
+  authors: [{ name: "Tomas Montero" }],
+  creator: "Tomas Montero",
   openGraph: {
     title: "Tomas Montero | Desarrollo de Software",
     description:
-      "Páginas web profesionales en 24h. Si tu negocio no está online, estás perdiendo clientes.",
+      "Impulsá tu negocio con tecnología. Desarrollo de software profesional y a medida.",
+    url: "https://tomasmontero.top",
+    siteName: "Tomas Montero Software",
     locale: "es_AR",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tomas Montero | Desarrollo de Software",
+    description: "Soluciones tecnológicas profesionales para potenciar tu marca.",
+    creator: "@tomasmontero", 
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
