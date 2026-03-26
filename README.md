@@ -51,7 +51,7 @@ El sitio utiliza un sistema de diseño propio documentado para maximizar la jera
    ```
 
 5. **Abrir en el navegador**:
-   Visita [http://localhost:3000](http://localhost:3000)
+   Visita [https://tomasmontero.com](https://tomasmontero.com)
 
 ---
 

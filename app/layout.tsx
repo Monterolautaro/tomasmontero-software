@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tomasmontero.top"), 
+  metadataBase: new URL("https://tomasmontero.com"), 
   title: {
     default: "Tomas Montero | Desarrollo de Software",
     template: "%s | Tomas Montero"
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Tomas Montero | Desarrollo de Software",
     description:
       "Impulsá tu negocio con tecnología. Desarrollo de software profesional y a medida.",
-    url: "https://tomasmontero.top",
+    url: "https://tomasmontero.com",
     siteName: "Tomas Montero Software",
     locale: "es_AR",
     type: "website",
