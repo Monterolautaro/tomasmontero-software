@@ -7,27 +7,27 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://tomasmontero.com"), 
   title: {
-    default: "Tomas Montero | Desarrollo de Software",
-    template: "%s | Tomas Montero"
+    default: "Delanoe Growth | Adquisición de Clientes",
+    template: "%s | Delanoe Growth"
   },
   description:
-    "Soluciones tecnológicas de alto impacto. Páginas web profesionales, apps y optimización de procesos para negocios digitales.",
-  keywords: ["desarrollo de software", "páginas web", "Next.js", "Tomas Montero", "software Argentina", "digitalización de negocios"],
-  authors: [{ name: "Tomas Montero" }],
-  creator: "Tomas Montero",
+    "Agencia de adquisición de clientes para pymes y negocios. Combinamos marketing, análisis comercial y optimización de procesos para escalar tus ventas.",
+  keywords: ["adquisición de clientes", "marketing digital", "crecimiento de negocios", "optimización de ventas", "Delanoe Growth", "Tomas Montero", "pymes"],
+  authors: [{ name: "Delanoe Growth" }],
+  creator: "Delanoe Growth",
   openGraph: {
-    title: "Tomas Montero | Desarrollo de Software",
+    title: "Delanoe Growth | Adquisición de Clientes",
     description:
-      "Impulsá tu negocio con tecnología. Desarrollo de software profesional y a medida.",
+      "Conseguí más clientes y convertí más consultas en ventas. Combinamos marketing, análisis comercial y optimización de procesos.",
     url: "https://tomasmontero.com",
-    siteName: "Tomas Montero Software",
+    siteName: "Delanoe Growth",
     locale: "es_AR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tomas Montero | Desarrollo de Software",
-    description: "Soluciones tecnológicas profesionales para potenciar tu marca.",
+    title: "Delanoe Growth | Adquisición de Clientes",
+    description: "Conseguí más clientes y convertí más consultas en ventas. Combinamos marketing, análisis comercial y optimización de procesos.",
     creator: "@tomasmontero", 
   },
   robots: {

@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/Button";
 const navLinks = [
   { name: "Inicio", href: "/" },
   { name: "Servicios", href: "/servicios" },
-  { name: "Quién Soy", href: "/quien-soy" },
+  { name: "Nosotros", href: "/quien-soy" },
   // { name: "Testimonios", href: "/testimonios" },
 ];
 
@@ -39,8 +39,12 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
          
-          <Link href="/" className="text-xl font-bold tracking-tight text-primary-900">
-            Tomas Montero Software
+          <Link href="/" className="flex items-center">
+            <img 
+              src="/branding/logo-principal-sin-fondo.png" 
+              alt="Delanoe Growth" 
+              className="h-16 md:h-24 w-auto object-contain" 
+            />
           </Link>
 
     

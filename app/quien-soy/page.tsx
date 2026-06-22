@@ -7,8 +7,8 @@ import Image from "next/image";
 import { ArrowRight, Code, Heart } from "lucide-react";
 
 export const metadata = {
-  title: "Quién Soy | Tomas Montero Software",
-  description: "Conocé más sobre mí y mi pasión por el desarrollo de software.",
+  title: "Nosotros | Delanoe Growth",
+  description: "Conocé a Tomas Montero, fundador de Delanoe Growth, y cómo ayuda a escalar la adquisición de clientes.",
 };
 
 export default function AboutPage() {
@@ -22,7 +22,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden bg-primary-100 border-8 border-white shadow-xl">
               <Image
-                src="/escritorio_yo.JPG"
+                src="/fundador.jpg"
                 alt="Tomas Montero"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -39,14 +39,13 @@ export default function AboutPage() {
 
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed mb-10">
                 <p>
-                  Soy desarrollador de software y emprendedor, enfocado en ayudar a negocios a crecer combinando tecnología y estrategia comercial.
+                  Fundé <strong>Delanoe Growth</strong> con un propósito claro: ayudar a pymes y negocios de ticket medio-alto a construir sistemas predecibles de adquisición de clientes.
                 </p>
                 <p>
-                  A lo largo de mi experiencia, trabajé tanto en proyectos propios como en entornos corporativos como Reale Seguros, lo que me llevó a entender algo bastante importante: no alcanza con tener un buen producto, si no llega a las personas correctas.
+                  Mi formación y experiencia como desarrollador de software (habiendo trabajado en proyectos propios y entornos corporativos como Reale Seguros) me enseñaron que un excelente producto o servicio no sirve de nada si no llega a las personas correctas.
                 </p>
                 <p>
-                 Hoy me enfoco en resolver ese problema. No solo desarrollo páginas o aplicaciones, sino que analizo cada proyecto para entender a quién está dirigido y cómo hacerlo llegar de forma efectiva.
-                 Mi objetivo no es solo crear software, sino ayudarte a conseguir más clientes y mejorar la forma en que tu negocio se presenta y crece.
+                  Hoy combino mi experiencia técnica con marketing digital estratégico y optimización comercial. Diseñamos landing pages veloces, pautamos campañas eficientes en Meta y TikTok, y estructuramos automatizaciones e integraciones de CRM para asegurar que ninguna consulta valiosa se pierda en el proceso.
                 </p>
               </div>
 
@@ -67,7 +66,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <div className="font-bold text-primary-900 text-2xl">100%</div>
-                    <div className="text-sm text-slate-500 font-medium">dedicación</div>
+                    <div className="text-sm text-slate-500 font-medium">enfoque en resultados</div>
                   </div>
                 </div>
               </div>
@@ -80,7 +79,7 @@ export default function AboutPage() {
                 </Link>
                 <Link href="/servicios" className="w-full sm:w-auto">
                   <Button variant="outline" size="lg" className="w-full text-lg h-14 px-8">
-                    Ver mis servicios <ArrowRight className="ml-2 w-5 h-5" />
+                    Ver servicios <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
               </div>
