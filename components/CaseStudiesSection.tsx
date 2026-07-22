@@ -118,7 +118,6 @@ const CASES: CaseStudy[] = [
       "El desafío fue generar un flujo constante de prospectos calificados con intención de compra, reduciendo la cantidad de leads no calificados y aumentando la cartera de propiedades para la venta.",
     metrics: [
       { value: "5", label: "Nuevas propiedades captadas", sublabel: "Referidos directos del proceso" },
-      { value: "USD 95K", label: "Venta cruzada adicional", sublabel: "Segunda propiedad del mismo propietario" },
     ],
     docImages: [
       {
