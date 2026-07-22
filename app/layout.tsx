@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://tomasmontero.com"), 
   title: {
-    default: "Delanoe Growth | Adquisición de Clientes",
+    default: "Marketing Neuquén | Delanoe Growth",
     template: "%s | Delanoe Growth"
   },
   description:

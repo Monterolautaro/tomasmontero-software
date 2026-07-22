@@ -16,7 +16,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-primary-300 max-w-sm leading-relaxed mb-6">
-              Ayudamos a negocios de ticket medio y alto a conseguir más clientes y convertir más consultas en ventas. Combinamos marketing, análisis comercial y optimización de procesos.
+              Somos una agencia de marketing digital en Neuquén capital, ayudamos a negocios a conseguir más clientes y convertir más consultas en ventas. Combinamos marketing, análisis comercial y optimización de procesos. 
             </p>
           </div>
 
