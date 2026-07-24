@@ -23,8 +23,30 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Nosotros | Delanoe Growth",
-  description: "Conocé a Delanoe Growth y a Tomas Montero. Agencia de adquisición de clientes con enfoque técnico y orientada 100% a performance.",
+  title: "Agencia de Marketing Digital en Neuquén | Quiénes Somos | Delanoe Growth",
+  description: "Conocé a Delanoe Growth y a Tomás Montero. Agencia de marketing digital y adquisición de clientes en Neuquén con enfoque técnico y orientada 100% a performance.",
+  openGraph: {
+    title: "Agencia de Marketing Digital en Neuquén | Delanoe Growth",
+    description:
+      "Conocé quiénes somos: combinamos publicidad, tecnología e inteligencia artificial para escalar tu negocio.",
+    url: "https://tomasmontero.com/nosotros",
+    type: "website",
+    images: [
+      {
+        url: "/branding/banner.png",
+        width: 1200,
+        height: 630,
+        alt: "Delanoe Growth — Equipo de Marketing Digital en Neuquén",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Quiénes Somos | Delanoe Growth",
+    description:
+      "Agencia de marketing digital y adquisición de clientes en Neuquén. Conoce al equipo y la historia de Delanoe Growth.",
+    images: ["/branding/banner.png"],
+  },
 };
 
 export default function AboutPage() {
@@ -301,7 +323,7 @@ export default function AboutPage() {
                     Hablar por WhatsApp
                   </Button>
                 </a>
-                <Link href="/servicios">
+                <Link href="/marketingdigital">
                   <Button variant="outline" size="lg" className="w-full sm:w-auto text-lg h-14 px-8 bg-white">
                     Ver servicios <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>

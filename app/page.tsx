@@ -8,6 +8,35 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Zap, TrendingUp, CheckCircle2, ArrowRight, Target, Search, Layers, Rocket, BarChart3, TrendingUp as ScaleUp } from "lucide-react";
 import { ScrollDown } from "@/components/ScrollDown";
 import { CaseStudiesSection } from "@/components/CaseStudiesSection";
+import { FAQSection } from "@/components/FAQSection";
+
+export const metadata = {
+  title: "Agencia de Marketing Digital | Delanoe Growth",
+  description:
+    "Ayudamos a empresas y profesionales a conseguir más clientes mediante Google Ads, Meta Ads, contenido orgánico y landing pages optimizadas para convertir visitas en ventas.",
+  openGraph: {
+    title: "Marketing Digital Neuquén | Delanoe Growth",
+    description:
+      "Conseguí más clientes y convertí más consultas en ventas. Combinamos marketing, análisis comercial y optimización de procesos.",
+    url: "https://tomasmontero.com",
+    type: "website",
+    images: [
+      {
+        url: "/branding/banner.png",
+        width: 1200,
+        height: 630,
+        alt: "Delanoe Growth — Agencia de Marketing Digital en Neuquén",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Delanoe Growth | Adquisición de Clientes",
+    description:
+      "Conseguí más clientes y convertí más consultas en ventas. Combinamos marketing, análisis comercial y optimización de procesos.",
+    images: ["/branding/banner.png"],
+  },
+};
 
 export default function Home() {
   return (
@@ -138,6 +167,43 @@ export default function Home() {
           </div>
         </Card>
       </section>
+
+      {/* Business FAQ Section */}
+      <FAQSection
+        title="Preguntas Frecuentes sobre la Agencia"
+        subtitle="Conocé más sobre nuestra metodología, enfoque técnico y forma de trabajo."
+        items={[
+          {
+            question: "¿Qué es Delanoe Growth y a qué se dedica?",
+            answer: "Somos una agencia de marketing digital y adquisición de clientes radicada en Neuquén Capital. Combinamos desarrollo de software, tecnologías emergentes como generación de imagenes y video con IA, publicidad estratégica (Google Ads y Meta Ads) y contenido orgánico para ayudar a empresas y profesionales a aumentar sus ventas, a través de nuestro sistema de 5 pasos.",
+          },
+          {
+            question: "¿Con qué tipo de empresas o profesionales trabajan?",
+            answer: "Trabajamos con pymes, prestadores de servicios, profesionales e instituciones que necesitan estructurar su proceso de venta y generar una entrada constante de prospectos calificados.",
+          },
+          {
+            question: "¿Cómo sé si mi negocio puede obtener buenos resultados?",
+            answer: "El Marketing no es magia, es darle visibilidad a un producto o servicio. Si lo que ofreces está desalineado con las expectativas del mercado, por ejemplo, sobre precios o productos de mala calidad a un alto costo, difícilmente puedas obtener buenos resultados. Pero si tu propuesta tiene valor, un producto alineado al mercado, o de buena calidad, la visibilidad te garantiza resultados.",
+          },
+          {
+            question: "¿Trabajan únicamente en Neuquén o en todo el país?",
+            answer: "Si bien trabajamos de forma presencial para la creación de creativos publicitario y contenido orgánico, podemos trabajar de forma remota ofreciendo un plan personalizado, sujeto a evaluar el caso.",
+          },
+          {
+            question: "¿Por qué elegir Delanoe Growth sobre otra agencia?",
+            answer: "No nos enfocamos en métricas como 'seguidores' o 'me gustas', y no ofrecemos una lista de tareas a realizar. Trabajamos sobre la única métrica / estadística que le importa a un dueño de negocio: las ventas. Por eso, medimos la cantidad de contactos que te llegan, su calidad, y por último cuanto de ellos se convierten en clientes.",
+          },
+          {
+            question: "¿Cómo es el proceso para empezar a trabajar juntos?",
+            answer: "Primero agendamos una llamada de diagnóstico sin costo para conocer tu negocio. Analizamos tu embudo comercial actual, definimos los objetivos y hablamos sobre el plan que se ajuste a tu caso.",
+          },
+          {
+            question: "¿Cuánto tiempo se tarda en ver resultados?",
+            answer: "Desde el primer día ya estamos trabajando en tu proyecto. No hay una única respuesta ya que depende mucho de tu industria, la competencia, el producto o servicio que ofrezcas y su costo. Lo que si podemos asegurar desde antes de comenzar, es que invertir en publicidad tiene un retorno mucho más rápido que generar contenido orgánico. El contenido orgánico es una estrategia a mediano / largo plazo, mientras que la publicidad tiene un retorno más inmediato.",
+          },
+        ]}
+        className="bg-slate-50/50 border-t border-slate-100"
+      />
 
       <Footer />
       <WhatsAppButton />

@@ -24,8 +24,8 @@ export function Footer() {
             <h3 className="font-semibold text-lg mb-6 text-primary-100">Enlaces Rápidos</h3>
             <ul className="space-y-4">
               <li><Link href="/" className="text-primary-300 hover:text-white transition-colors duration-200">Inicio</Link></li>
-              <li><Link href="/servicios" className="text-primary-300 hover:text-white transition-colors duration-200">Servicios</Link></li>
-              <li><Link href="/quien-soy" className="text-primary-300 hover:text-white transition-colors duration-200">Nosotros</Link></li>
+              <li><Link href="/marketingdigital" className="text-primary-300 hover:text-white transition-colors duration-200">Servicios</Link></li>
+              <li><Link href="/nosotros" className="text-primary-300 hover:text-white transition-colors duration-200">Nosotros</Link></li>
               {/* <li><Link href="/testimonios" className="text-primary-300 hover:text-white transition-colors duration-200">Testimonios</Link></li> */}
             </ul>
           </div>

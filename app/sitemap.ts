@@ -11,13 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/servicios`,
+      url: `${baseUrl}/marketingdigital`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/quien-soy`,
+      url: `${baseUrl}/nosotros`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.5,
