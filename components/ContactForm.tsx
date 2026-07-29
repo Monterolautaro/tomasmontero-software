@@ -1,15 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "./ui/Button";
 
 export function ContactForm() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,8 +26,8 @@ export function ContactForm() {
 
       if (!response.ok) throw new Error("Error al enviar el mensaje");
 
-      setStatus("success");
-      setFormData({ name: "", phone: "", message: "" });
+      // Redirige a la Thank You Page (conversión rastreable en GA4 / Meta Pixel)
+      router.push("/gracias");
     } catch (error) {
       console.error(error);
       setStatus("error");
@@ -78,7 +80,7 @@ export function ContactForm() {
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           className={`${inputClass} resize-none`}
-          placeholder="Contame sobre tu negocio y qué procesos te gustaría mejorar o qué problema buscás resolver..."
+          placeholder="Contanos un poco sobre tu negocio"
         />
       </div>
 
@@ -86,11 +88,6 @@ export function ContactForm() {
         {status === "loading" ? "Enviando..." : "Enviar Mensaje"}
       </Button>
 
-      {status === "success" && (
-        <p className="text-success-700 bg-success-100 rounded-lg px-4 py-3 text-sm text-center">
-          ¡Mensaje enviado con éxito! Me pondré en contacto a la brevedad.
-        </p>
-      )}
       {status === "error" && (
         <p className="text-danger-700 bg-danger-100 rounded-lg px-4 py-3 text-sm text-center">
           Hubo un error al enviar el mensaje. Por favor, intentá nuevamente vía WhatsApp.
@@ -99,3 +96,4 @@ export function ContactForm() {
     </form>
   );
 }
+

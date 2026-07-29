@@ -109,7 +109,7 @@ const CASES: CaseStudy[] = [
     industry: "Sector Inmobiliario",
     services: ["Meta Ads", "Funnel de Conversión", "Captación de Propiedades"],
     heroMetric: "5",
-    heroMetricLabel: "Propiedades captadas",
+    heroMetricLabel: "Propiedades captadas al mes",
     summary:
       "Con campañas de publicidad logramos agendar visitas calificadas de forma predecible, además de conseguir propiedades para captar",
     context:
@@ -117,7 +117,7 @@ const CASES: CaseStudy[] = [
     challenge:
       "El desafío fue generar un flujo constante de prospectos calificados con intención de compra, reduciendo la cantidad de leads no calificados y aumentando la cartera de propiedades para la venta.",
     metrics: [
-      { value: "5", label: "Nuevas propiedades captadas", sublabel: "Referidos directos del proceso" },
+      { value: "5", label: "Captaciones mensuales", sublabel: "Promedio de propiedades" },
     ],
     docImages: [
       {
@@ -134,7 +134,6 @@ const CASES: CaseStudy[] = [
   },
 ];
 
-// ─── Component ───────────────────────────────────────────────────────────────
 
 export function CaseStudiesSection() {
   const [activeCase, setActiveCase] = useState<CaseStudy | null>(null);
@@ -142,7 +141,6 @@ export function CaseStudiesSection() {
   const [activeDocIndex, setActiveDocIndex] = useState(0);
   const modalRef = useRef<HTMLDivElement>(null);
 
-  // Lock body scroll and handle keyboard
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") closeModal();

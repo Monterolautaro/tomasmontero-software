@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "./ui/Button";
 
 export function WaitlistForm() {
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -32,7 +33,8 @@ export function WaitlistForm() {
         throw new Error("Error al enviar el formulario");
       }
 
-      setIsSuccess(true);
+      // Redirige a la Thank You Page (conversión rastreable en GA4 / Meta Pixel)
+      router.push("/gracias");
     } catch (err) {
       setError("Hubo un problema al enviar tus datos. Por favor, intentá de nuevo o contactame por WhatsApp.");
       console.error(err);
@@ -40,27 +42,6 @@ export function WaitlistForm() {
       setIsSubmitting(false);
     }
   };
-
-  if (isSuccess) {
-    return (
-      <div className="text-center py-8">
-        <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-          </svg>
-        </div>
-        <h3 className="text-xl font-bold text-primary-900 mb-2">¡Lugar confirmado!</h3>
-        <p className="text-slate-600">Gracias por tu interés. Me pondré en contacto con vos a la brevedad.</p>
-        <Button 
-          variant="outline" 
-          className="mt-6" 
-          onClick={() => setIsSuccess(false)}
-        >
-          Enviar otro mensaje
-        </Button>
-      </div>
-    );
-  }
 
   return (
     <form className="space-y-6" onSubmit={handleSubmit}>

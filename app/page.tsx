@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
@@ -52,28 +53,31 @@ export default function Home() {
         </div>
  
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center pt-32 pb-16 md:pt-40 md:pb-20">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-navy tracking-tight max-w-4xl mb-6 leading-tight">
-            Te ayudamos a aumentar tu flujo de <span className="text-primary-600">clientes</span>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-navy tracking-tight max-w-4xl mb-6 leading-tight">
+            Construímos un sistema de adquisión para que tu negocio <span className="text-primary-600">venda más.</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-600 max-w-2xl mb-10 leading-relaxed">
-            Tener un buen producto o servicio ya no alcanza si tus clientes no te encuentran en internet. Te ayudamos a construir una presencia digital que transmita confianza y facilite la comunicación con ellos.
+          <p className="text-lg md:text-l text-slate-600 max-w-2xl mb-10 leading-relaxed">
+            Integración de CRO, SEO, psicología visual, desarrollo web y pauta digital. Optimizamos métricas de negocio: leads calificados, reuniones agendadas e incremento en tus ventas.
           </p>
-          <div className="align: flex; flex-direction: column">
+          <div className="flex flex-col items-center gap-5">
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <Link href="#contact" className="w-full sm:w-auto">
                 <Button size="lg" className="w-full text-lg h-14 px-8 shadow-md">
-                  Contactame <ArrowRight className="ml-2 w-5 h-5" />
+                  Solicitar diagnóstico gratuito <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <a href="https://wa.me/5492996736980?text=Hola!%20Me%20contacto%20desde%20la%20web%20para%20conocer%20los%20servicios%20de%20adquisición." target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <Link href="#proyectos" className="w-full sm:w-auto">
                 <Button variant="outline" size="lg" className="w-full text-lg h-14 px-8 bg-white/80 backdrop-blur-sm">
-                  Hablar por WhatsApp
+                  Ver casos de éxito
                 </Button>
-              </a>
+              </Link>
             </div>
-            <div className="flex items-center justify-center gap-2">
-              <ScrollDown targetId="value" className="mt-8" />
-            </div>
+            {/* Micro-copy social proof */}
+            <p className="text-xs text-slate-400 font-medium tracking-wide">
+              Respuesta en menos de 24 hs
+              <span className="mx-2 text-slate-300">·</span>
+              +80% de incremento en consultas demostrado en clientes locales
+            </p>
           </div>
         
         </div>
@@ -85,9 +89,11 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-16">
             {/* Left Column: Image */}
             <div className="w-full md:w-1/2 flex justify-center">
-              <img 
+              <Image 
                 src="/mirando el celular.png" 
                 alt="Persona mirando el celular"
+                width={600}
+                height={600}
                 className="w-full max-w-md h-auto object-cover shadow-xl rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-none rounded-br-none border border-slate-100/50"
               />
             </div>

@@ -74,7 +74,17 @@ export function Footer() {
 
         <div className="pt-8 border-t border-primary-800 flex flex-col md:flex-row justify-between items-center gap-4 text-primary-400 text-sm">
           <p>&copy; {new Date().getFullYear()} Delanoe Growth. Todos los derechos reservados.</p>
-          <p>Diseñado y desarrollado con pasión.</p>
+          <div className="flex items-center gap-4">
+            <Link href="/politica-privacidad" className="hover:text-primary-200 transition-colors">
+              Política de Privacidad
+            </Link>
+            <span className="hidden md:inline text-primary-700">|</span>
+            <Link href="/terminos-de-uso" className="hover:text-primary-200 transition-colors">
+              Términos de Uso
+            </Link>
+            <span className="hidden md:inline text-primary-700">|</span>
+            <p>Diseñado y desarrollado con pasión.</p>
+          </div>
         </div>
       </div>
     </footer>
