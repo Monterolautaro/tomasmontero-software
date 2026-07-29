@@ -15,7 +15,7 @@ export const metadata = {
     title: "Marketing Digital para Empresas y Profesionales | Delanoe Growth",
     description:
       "Implementamos un sistema de adquisición de clientes adaptado a cada negocio. Plan Crecimiento y Plan Full en Neuquén.",
-    url: "https://tomasmontero.com/marketingdigital",
+    url: "https://delanoegrowth.com/marketingdigital",
     type: "website",
     images: [
       {

@@ -19,7 +19,7 @@ export const metadata = {
     title: "Marketing Digital Neuquén | Delanoe Growth",
     description:
       "Conseguí más clientes y convertí más consultas en ventas. Combinamos marketing, análisis comercial y optimización de procesos.",
-    url: "https://tomasmontero.com",
+    url: "https://delanoegrowth.com",
     type: "website",
     images: [
       {

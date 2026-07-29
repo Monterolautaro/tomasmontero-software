@@ -51,7 +51,7 @@ El sitio utiliza un sistema de diseño propio documentado para maximizar la jera
    ```
 
 5. **Abrir en el navegador**:
-   Visita [https://tomasmontero.com](https://tomasmontero.com)
+   Visita [https://delanoegrowth.com](https://delanoegrowth.com)
 
 ---
 

@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { metodologiaData } from "@/lib/metodologia-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://tomasmontero.com";
+  const baseUrl = "https://delanoegrowth.com";
 
   return [
     {

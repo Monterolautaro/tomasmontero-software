@@ -29,7 +29,7 @@ export const metadata = {
     title: "Agencia de Marketing Digital en Neuquén | Delanoe Growth",
     description:
       "Conocé quiénes somos: combinamos publicidad, tecnología e inteligencia artificial para escalar tu negocio.",
-    url: "https://tomasmontero.com/nosotros",
+    url: "https://delanoegrowth.com/nosotros",
     type: "website",
     images: [
       {

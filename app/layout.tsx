@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tomasmontero.com"), 
+  metadataBase: new URL("https://delanoegrowth.com"), 
   title: {
     default: "Agencia de Marketing Digital | Delanoe Growth",
     template: "%s | Delanoe Growth"
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Marketing Digital Neuquén | Delanoe Growth",
     description:
       "Conseguí más clientes y convertí más consultas en ventas. Combinamos marketing, análisis comercial y optimización de procesos.",
-    url: "https://tomasmontero.com",
+    url: "https://delanoegrowth.com",
     siteName: "Delanoe Growth",
     locale: "es_AR",
     type: "website",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Delanoe Growth | Adquisición de Clientes",
     description: "Conseguí más clientes y convertí más consultas en ventas. Combinamos marketing, análisis comercial y optimización de procesos.",
-    creator: "@tomasmontero",
+    creator: "@delanoegrowth",
     images: ["/branding/banner.png"],
   },
   robots: {
@@ -62,15 +62,15 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": ["ProfessionalService", "LocalBusiness"],
-        "@id": "https://tomasmontero.com/#organization",
+        "@id": "https://delanoegrowth.com/#organization",
         "name": "Delanoe Growth",
         "alternateName": "Delanoe Growth - Agencia de Marketing Digital",
-        "url": "https://tomasmontero.com",
+        "url": "https://delanoegrowth.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://tomasmontero.com/branding/logo-principal-sin-fondo.png"
+          "url": "https://delanoegrowth.com/branding/logo-principal-sin-fondo.png"
         },
-        "image": "https://tomasmontero.com/branding/logo-principal-sin-fondo.png",
+        "image": "https://delanoegrowth.com/branding/logo-principal-sin-fondo.png",
         "description":
           "Agencia de marketing digital y adquisición de clientes en Neuquén. Ayudamos a empresas y profesionales a captar clientes mediante Google Ads, Meta Ads y landing pages de alta conversión.",
         "telephone": "+5492996736980",
@@ -117,7 +117,7 @@ export default function RootLayout({
           "https://www.linkedin.com/in/lautaro-tomas-montero/"
         ],
         "founder": {
-          "@id": "https://tomasmontero.com/#person"
+          "@id": "https://delanoegrowth.com/#person"
         },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
@@ -160,13 +160,13 @@ export default function RootLayout({
       },
       {
         "@type": "Person",
-        "@id": "https://tomasmontero.com/#person",
+        "@id": "https://delanoegrowth.com/#person",
         "name": "Tomás Lautaro Delanoe Montero",
         "alternateName": "Tomas Montero",
-        "url": "https://tomasmontero.com",
+        "url": "https://delanoegrowth.com",
         "jobTitle": "Fundador & Especialista en Adquisición y Marketing Digital",
         "worksFor": {
-          "@id": "https://tomasmontero.com/#organization"
+          "@id": "https://delanoegrowth.com/#organization"
         },
         "sameAs": [
           "https://www.linkedin.com/in/lautaro-tomas-montero/"
@@ -174,12 +174,12 @@ export default function RootLayout({
       },
       {
         "@type": "WebSite",
-        "@id": "https://tomasmontero.com/#website",
-        "url": "https://tomasmontero.com",
+        "@id": "https://delanoegrowth.com/#website",
+        "url": "https://delanoegrowth.com",
         "name": "Delanoe Growth",
         "description": "Agencia de Marketing Digital y Adquisición de Clientes en Neuquén",
         "publisher": {
-          "@id": "https://tomasmontero.com/#organization"
+          "@id": "https://delanoegrowth.com/#organization"
         },
         "inLanguage": "es-AR"
       }

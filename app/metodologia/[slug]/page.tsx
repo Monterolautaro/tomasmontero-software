@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: discipline.title,
       description: discipline.summary,
-      url: `https://tomasmontero.com/metodologia/${discipline.slug}`,
+      url: `https://delanoegrowth.com/metodologia/${discipline.slug}`,
       type: "article",
     },
   };

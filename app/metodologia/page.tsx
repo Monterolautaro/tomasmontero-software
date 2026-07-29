@@ -100,7 +100,7 @@ export const metadata = {
     title: "Metodología | Delanoe Growth",
     description:
       "De la psicología del comprador a la venta final. Conocé los 4 pilares técnicos y psicológicos que aplicamos en cada proyecto.",
-    url: "https://tomasmontero.com/metodologia",
+    url: "https://delanoegrowth.com/metodologia",
     type: "website",
     images: [
       {
