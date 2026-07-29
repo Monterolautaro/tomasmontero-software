@@ -10,7 +10,7 @@ import { metodologiaCategories } from "@/lib/metodologia-data";
 
 const navLinks = [
   { name: "Inicio", href: "/" },
-  { name: "Servicios", href: "/marketingdigital" },
+  { name: "Marketing Digital", href: "/marketingdigital" },
   { name: "Metodología", href: "/metodologia", hasDropdown: true },
   { name: "Nosotros", href: "/nosotros" },
   // { name: "Testimonios", href: "/testimonios" },
