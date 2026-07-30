@@ -167,7 +167,7 @@ export function ContactForm() {
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           className={`${inputClass} resize-none`}
-          placeholder="Contanos un poco sobre tu negocio"
+          placeholder="Contanos un poco sobre tu negocio."
         />
       </div>
 
