@@ -199,7 +199,7 @@ export default function RootLayout({
         className={`${inter.className} min-h-screen flex flex-col antialiased selection:bg-primary-100 selection:text-primary-900`}
       >
         <div className="flex-1">{children}</div>
-        <GoogleAnalytics gaId="G-XK71ZCE2EL" />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
       </body>
     </html>
   );
