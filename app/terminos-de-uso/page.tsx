@@ -93,7 +93,7 @@ export default function TermsOfUsePage() {
             <h2>7. Contacto</h2>
             <p>
               Si tienes alguna pregunta o inquietud sobre estos Términos de Uso, por favor
-              comunícate con nosotros escribiendo a: <a href="mailto:delanoegrowth@gmail.com">delanoegrowth@gmail.com</a>.
+              comunícate con nosotros escribiendo a: <a href="mailto:contacto@delanoegrowth.com">contacto@delanoegrowth.com</a>.
             </p>
           </div>
         </div>

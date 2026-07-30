@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -74,7 +75,7 @@ export default function RootLayout({
         "description":
           "Agencia de marketing digital y adquisición de clientes en Neuquén. Ayudamos a empresas y profesionales a captar clientes mediante Google Ads, Meta Ads y landing pages de alta conversión.",
         "telephone": "+5492996736980",
-        "email": "delanoegrowth@gmail.com",
+        "email": "contacto@delanoegrowth.com",
         "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
@@ -198,6 +199,7 @@ export default function RootLayout({
         className={`${inter.className} min-h-screen flex flex-col antialiased selection:bg-primary-100 selection:text-primary-900`}
       >
         <div className="flex-1">{children}</div>
+        <GoogleAnalytics gaId="G-XK71ZCE2EL" />
       </body>
     </html>
   );

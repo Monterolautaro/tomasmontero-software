@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
               En cualquier momento, tienes el derecho de solicitar acceder, rectificar o eliminar
               la información personal que nos hayas proporcionado. Para ejercer cualquiera de
               estos derechos, puedes contactarnos directamente a través de nuestro correo
-              electrónico: <a href="mailto:delanoegrowth@gmail.com">delanoegrowth@gmail.com</a>.
+              electrónico: <a href="mailto:contacto@delanoegrowth.com">contacto@delanoegrowth.com</a>.
             </p>
           </div>
         </div>

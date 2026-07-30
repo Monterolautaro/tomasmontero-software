@@ -39,8 +39,8 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-secondary-300 shrink-0" />
-                <a href="mailto:delanoegrowth@gmail.com" className="hover:text-white transition-colors duration-200 break-all text-xs lg:text-sm">
-                  delanoegrowth@gmail.com
+                <a href="mailto:contacto@delanoegrowth.com" className="hover:text-white transition-colors duration-200 break-all text-xs lg:text-sm">
+                  contacto@delanoegrowth.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
