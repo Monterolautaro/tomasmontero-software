@@ -2,10 +2,21 @@ import Link from "next/link";
 import { MapPin, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
-export function Footer() {
+interface FooterProps {
+  /** Sin fondo ni borde propios: continúa el fondo de la sección que lo contiene. */
+  integrado?: boolean;
+}
+
+export function Footer({ integrado = false }: FooterProps) {
   return (
-    <footer className="bg-primary-900 text-white py-16 border-t border-primary-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer
+      className={
+        integrado
+          ? "text-white pb-16"
+          : "bg-primary-900 text-white py-16 border-t border-primary-800"
+      }
+    >
+      <div className={`${integrado ? "max-w-6xl" : "max-w-7xl"} mx-auto px-4 sm:px-6 lg:px-8`}>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
           <div className="md:col-span-4">
             <Link href="/" className="mb-6 block">
@@ -25,6 +36,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li><Link href="/" className="text-primary-300 hover:text-white transition-colors duration-200">Inicio</Link></li>
               <li><Link href="/marketingdigital" className="text-primary-300 hover:text-white transition-colors duration-200">Servicios</Link></li>
+              <li><Link href="/casos-de-exito" className="text-primary-300 hover:text-white transition-colors duration-200">Casos de éxito</Link></li>
               <li><Link href="/nosotros" className="text-primary-300 hover:text-white transition-colors duration-200">Nosotros</Link></li>
               {/* <li><Link href="/testimonios" className="text-primary-300 hover:text-white transition-colors duration-200">Testimonios</Link></li> */}
             </ul>
