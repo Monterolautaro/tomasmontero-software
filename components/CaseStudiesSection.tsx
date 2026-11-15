@@ -301,9 +301,10 @@ export function CaseStudiesSection() {
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-5 text-xs text-slate-400">
                     <span className="font-mono text-slate-300">{String(idx + 1).padStart(2, "0")}</span>
                     <span className="h-3 w-px bg-slate-200" aria-hidden="true" />
-                    <span className="font-semibold text-navy">{c.client}</span>
-                    <span>· {c.clientDetail}</span>
-                    <span className="hidden sm:inline">· {c.location}</span>
+                    <span>
+                      <span className="font-semibold text-navy">{c.client}</span>
+                      <span className="hidden sm:inline"> · {c.clientDetail} · {c.location}</span>
+                    </span>
                     <span className="sm:ml-auto">{c.period}</span>
                   </div>
                   <h3 className="text-2xl sm:text-3xl lg:text-[2.1rem] font-bold text-navy tracking-tight leading-tight max-w-3xl">

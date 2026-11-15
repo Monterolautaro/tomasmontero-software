@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight, Volume2, VolumeX, Play } from "lucide-react";
 
 export interface ClientVideo {
@@ -18,42 +19,52 @@ interface VideoCarouselProps {
 
 /**
  * Carrusel horizontal de videos verticales (9:16).
- * - El video activo se reproduce en silencio; al terminar avanza al siguiente.
- * - Solo arranca cuando la sección está en pantalla (ahorra datos).
- * - El resto muestra su póster y no descarga el video (preload="none").
+ *
+ * Carga diferida:
+ * - Las tarjetas muestran una imagen de portada optimizada por next/image (lazy).
+ * - Solo existe UN elemento <video> en la página: el de la tarjeta activa.
+ *   Se crea recién cuando el carrusel entra en pantalla, así que al abrir la
+ *   página no se descarga ningún video.
+ * - Al salir de pantalla el video se pausa; al cambiar de tarjeta se descarga
+ *   solo el video nuevo.
+ * - Con "ahorro de datos" activado en el celular no hay reproducción automática.
  */
 export function VideoCarousel({ videos }: VideoCarouselProps) {
   const [active, setActive] = useState(0);
   const [muted, setMuted] = useState(true);
   const [inView, setInView] = useState(false);
+  const [started, setStarted] = useState(false);
   const trackRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const scrollingByCode = useRef(false);
 
-  // Reproducir solo cuando la sección es visible
+  // Detectar cuándo el carrusel está en pantalla
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
-    const io = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting), {
-      threshold: 0.35,
-    });
+    // Respetar "ahorro de datos": sin reproducción automática
+    const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+    const autoplayAllowed = !conn?.saveData;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        setInView(entry.isIntersecting);
+        if (entry.isIntersecting && autoplayAllowed) setStarted(true);
+      },
+      { threshold: 0.35 }
+    );
     io.observe(el);
     return () => io.disconnect();
   }, []);
 
-  // Play / pause según el índice activo
+  // Play / pausa / sonido del video activo
   useEffect(() => {
-    videoRefs.current.forEach((v, i) => {
-      if (!v) return;
-      if (i === active && inView) {
-        v.muted = muted;
-        v.play().catch(() => {});
-      } else {
-        v.pause();
-      }
-    });
-  }, [active, inView, muted]);
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = muted;
+    if (inView) v.play().catch(() => {});
+    else v.pause();
+  }, [active, inView, muted, started]);
 
   const scrollToIndex = useCallback((i: number) => {
     const track = trackRef.current;
@@ -70,14 +81,14 @@ export function VideoCarousel({ videos }: VideoCarouselProps) {
   const goTo = useCallback(
     (i: number) => {
       const next = (i + videos.length) % videos.length;
-      if (videoRefs.current[next]) videoRefs.current[next]!.currentTime = 0;
       setActive(next);
+      setStarted(true);
       scrollToIndex(next);
     },
     [videos.length, scrollToIndex]
   );
 
-  // Si el usuario desliza a mano, el video centrado pasa a ser el activo
+  // Si el usuario desliza a mano, la tarjeta centrada pasa a ser la activa
   const onScroll = () => {
     if (scrollingByCode.current) return;
     const track = trackRef.current;
@@ -144,6 +155,7 @@ export function VideoCarousel({ videos }: VideoCarouselProps) {
       >
         {videos.map((v, i) => {
           const isActive = i === active;
+          const showVideo = isActive && started;
           return (
             <figure
               key={v.id}
@@ -153,29 +165,39 @@ export function VideoCarousel({ videos }: VideoCarouselProps) {
             >
               <button
                 type="button"
-                onClick={() => (isActive ? setMuted((m) => !m) : goTo(i))}
+                onClick={() => (showVideo ? setMuted((m) => !m) : goTo(i))}
                 className="relative block w-full aspect-[9/16] rounded-3xl overflow-hidden bg-slate-900 shadow-xl ring-1 ring-slate-900/5"
-                aria-label={isActive ? `${muted ? "Activar" : "Silenciar"} sonido de ${v.title}` : `Reproducir ${v.title}`}
+                aria-label={showVideo ? `${muted ? "Activar" : "Silenciar"} sonido de ${v.title}` : `Reproducir ${v.title}`}
               >
-                <video
-                  ref={(el) => {
-                    videoRefs.current[i] = el;
-                  }}
-                  src={v.src}
-                  poster={v.poster}
-                  muted
-                  playsInline
-                  preload={isActive ? "auto" : "none"}
-                  onEnded={() => goTo(i + 1)}
-                  className="absolute inset-0 w-full h-full object-cover"
+                {/* Portada: liviana, optimizada y diferida */}
+                <Image
+                  src={v.poster}
+                  alt=""
+                  fill
+                  sizes="(min-width: 640px) 272px, 240px"
+                  className="object-cover"
                 />
-                {/* Degradado + etiqueta */}
+                {/* Único video de la página: solo el activo */}
+                {showVideo && (
+                  <video
+                    key={v.id}
+                    ref={videoRef}
+                    src={v.src}
+                    poster={v.poster}
+                    muted
+                    playsInline
+                    autoPlay
+                    preload="auto"
+                    onEnded={() => goTo(i + 1)}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                )}
                 <div className="absolute inset-x-0 top-0 p-4 bg-gradient-to-b from-black/60 to-transparent text-left">
                   <span className="inline-block px-2.5 py-1 rounded-full bg-white/15 backdrop-blur-md text-[10px] font-bold tracking-[0.12em] uppercase text-white">
                     {v.client}
                   </span>
                 </div>
-                {!isActive && (
+                {!showVideo && (
                   <span className="absolute inset-0 flex items-center justify-center">
                     <span className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
                       <Play size={22} className="text-navy ml-1" fill="currentColor" />
