@@ -56,7 +56,7 @@ export default function TermsOfUsePage() {
 
             <h2>3. Servicios y Diagnósticos</h2>
             <p>
-              La solicitud de un "Diagnóstico Gratuito" o "Auditoría" a través de nuestros
+              La solicitud de un "Diagnóstico" o "Auditoría" a través de nuestros
               formularios está sujeta a revisión y disponibilidad. Delanoe Growth se reserva
               el derecho de aceptar o rechazar solicitudes basadas en la viabilidad del proyecto
               o la capacidad operativa de la agencia en el momento.

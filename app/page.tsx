@@ -63,7 +63,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <Link href="#contact" className="w-full sm:w-auto">
                 <Button size="lg" className="w-full text-lg h-14 px-8 shadow-md">
-                  Solicitar diagnóstico gratuito <ArrowRight className="ml-2 w-5 h-5" />
+                  Solicitar diagnóstico <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
               <Link href="#proyectos" className="w-full sm:w-auto">
@@ -99,12 +99,19 @@ export default function Home() {
             </div>
             {/* Right Column: Text */}
             <div className="w-full md:w-1/2 text-left">
-              <h2 className="text-3xl md:text-4xl font-bold text-navy mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight text-navy mb-6">
                 ¿Por qué tu negocio no consigue más clientes?
               </h2>
               <p className="text-slate-600 text-lg leading-relaxed">
                 El mayor problema es no invertir en publicidad en una era donde las personas pasan en promedio 6 horas al día usando dispositivos móviles, no aparecer ahí es como poner un local fisico en una calle sin tránsito; Nadie te ve y por lo tanto nadie te compra. 
               </p>
+              <Link
+                href="/casos-de-exito#calculadora"
+                className="group mt-6 inline-flex items-center gap-2 font-semibold text-primary-600 hover:text-primary-800 transition-colors"
+              >
+                Calcula cuánto puedes pagar por una consulta
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
             </div>
           </div>
         </div>
@@ -114,7 +121,7 @@ export default function Home() {
       <section className="relative pt-6 overflow-x-clip">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-navy mb-4">Te ayudamos a solucionarlo implementando un sistema de adquisición de clientes</h2>
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight text-navy mb-4">Te ayudamos a solucionarlo implementando un sistema de adquisición de clientes</h2>
             <p className="text-slate-600 text-lg">Trabajamos con procesos definidos, adaptando nuestra metodología de 5 pasos a tu negocio para obtener los mejores resultados llegando a tu público objetivo</p>
           </div>
 
@@ -154,7 +161,7 @@ export default function Home() {
         <Card className="shadow-xl border-primary-100 p-0 overflow-hidden md:p-3 bg-white">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-xl overflow-hidden">
             <div className="bg-navy p-8 md:p-12 text-white flex flex-col justify-center">
-              <h2 className="text-3xl font-bold mb-4">Hablemos de tu negocio</h2>
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight mb-4">Hablemos de tu negocio</h2>
               <p className="text-slate-300 mb-10 leading-relaxed text-lg">
                 Escribinos detallando qué estás vendiendo y cuál es tu proceso actual. Analizamos tu caso y diseñamos la mejor estrategia para escalar tu adquisición.
               </p>
@@ -201,7 +208,7 @@ export default function Home() {
           },
           {
             question: "¿Cómo es el proceso para empezar a trabajar juntos?",
-            answer: "Primero agendamos una llamada de diagnóstico sin costo para conocer tu negocio. Analizamos tu embudo comercial actual, definimos los objetivos y hablamos sobre el plan que se ajuste a tu caso.",
+            answer: "Primero agendamos una llamada de diagnóstico para conocer tu negocio. Analizamos tu embudo comercial actual, definimos los objetivos y hablamos sobre el plan que se ajuste a tu caso.",
           },
           {
             question: "¿Cuánto tiempo se tarda en ver resultados?",

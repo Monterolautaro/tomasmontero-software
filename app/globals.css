@@ -77,3 +77,231 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee { animation: none; }
 }
+
+/* ─────────────────────────────────────────────────────────────────
+   MOVIMIENTO – /casos-de-exito
+   Solo se animan opacity y transform (los resuelve la GPU, sin reflow).
+   Sin JavaScript o con "reducir movimiento" activado, todo se ve fijo.
+───────────────────────────────────────────────────────────────── */
+
+/* Entrada de la apertura: CSS puro, arranca sin esperar a JavaScript */
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+.hero-in {
+  animation: hero-in 600ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+/* Subrayado que se dibuja bajo las palabras destacadas del título */
+@keyframes subrayar {
+  from { background-size: 0% 0.12em; }
+  to   { background-size: 100% 0.12em; }
+}
+.subrayado {
+  background-image: linear-gradient(var(--color-primary-200), var(--color-primary-200));
+  background-repeat: no-repeat;
+  background-position: 0 96%;
+  background-size: 100% 0.12em;
+  animation: subrayar 700ms cubic-bezier(0.2, 0.7, 0.2, 1) 650ms both;
+}
+
+/* Aparición al hacer scroll. Un elemento solo está oculto mientras lleva
+   data-oculto, y ese atributo lo pone RevealOnScroll únicamente sobre los
+   elementos que está observando. Lo que el script no registró se ve siempre. */
+[data-reveal] {
+  transition:
+    opacity 700ms cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0ms),
+    transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0ms);
+}
+[data-reveal][data-oculto] {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Barras de comparación: crecen desde la izquierda al aparecer */
+.barra {
+  transform-origin: left;
+  transition: transform 1000ms cubic-bezier(0.2, 0.7, 0.2, 1) calc(var(--d, 0ms) + 250ms);
+}
+[data-reveal][data-oculto] .barra {
+  transform: scaleX(0);
+}
+
+/* Banda azul de ancho completo. Su fondo (.banda-fondo) va recortado:
+   ExpandOnScroll mueve --p (entrada) y --q (salida) y el recorte pasa de
+   panel con márgenes a borde a borde. El contenido no se mueve ni se recorta. */
+.banda {
+  position: relative;
+  isolation: isolate;
+}
+.banda-fondo {
+  --e: calc(1 - var(--p, 1));
+  --lado: calc(max(var(--e), var(--q, 0)) * 3vw);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--color-navy);
+  clip-path: inset(
+    calc(var(--e) * 2rem) var(--lado) calc(var(--q, 0) * 2rem) var(--lado)
+    round calc(var(--e) * 2.5rem) calc(var(--e) * 2.5rem)
+          calc(var(--q, 0) * 2.5rem) calc(var(--q, 0) * 2.5rem)
+  );
+}
+/* Cuadrícula tenue que se desvanece hacia los bordes */
+.banda-grilla {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.055) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 75% 65% at 72% 18%, #000 15%, transparent 78%);
+}
+/* Luces que derivan despacio: solo transform, las mueve la GPU */
+@keyframes deriva {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(-9rem, 6rem, 0) scale(1.18); }
+}
+.banda-luz {
+  position: absolute;
+  width: 52rem;
+  height: 52rem;
+  border-radius: 50%;
+  will-change: transform;
+  animation: deriva 18s ease-in-out infinite alternate;
+}
+.banda-luz-1 {
+  top: -24rem;
+  right: -12rem;
+  background: radial-gradient(closest-side, rgb(32 96 176 / 0.5), transparent);
+}
+.banda-luz-2 {
+  bottom: -30rem;
+  left: -18rem;
+  background: radial-gradient(closest-side, rgb(74 128 196 / 0.28), transparent);
+  animation-duration: 26s;
+  animation-direction: alternate-reverse;
+}
+
+/* Filtro animado: todos los puntos llegan a la línea, solo algunos la cruzan */
+@keyframes filtro-frena {
+  0%        { transform: translateX(0); opacity: 0; }
+  10%, 42%  { opacity: 0.55; }
+  50%, 100% { transform: translateX(190px); opacity: 0; }
+}
+@keyframes filtro-pasa {
+  0%       { transform: translateX(0); opacity: 0; }
+  8%, 90%  { opacity: 1; }
+  100%     { transform: translateX(380px); opacity: 0; }
+}
+.filtro circle {
+  opacity: 0;
+  animation: filtro-frena var(--t, 6s) linear var(--d, 0s) infinite;
+}
+.filtro circle[data-pasa] {
+  animation-name: filtro-pasa;
+}
+
+/* Fuera de pantalla, las animaciones en bucle se pausan */
+.banda[data-fuera] .banda-luz,
+.banda[data-fuera] .filtro circle {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-in, .subrayado, .banda-luz { animation: none; }
+  .filtro { display: none; }
+  [data-reveal], .barra { transition: none; }
+}
+
+
+
+/* ── Calculadora (/casos-de-exito) ── */
+/* Deslizador: pista fina con el tramo recorrido en navy */
+.deslizador {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 1.5rem;
+  background: transparent;
+  cursor: pointer;
+}
+.deslizador::-webkit-slider-runnable-track {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-navy) var(--avance),
+    #cbd5e1 var(--avance)
+  );
+}
+.deslizador::-moz-range-track {
+  height: 2px;
+  background: #cbd5e1;
+}
+.deslizador::-moz-range-progress {
+  height: 2px;
+  background: var(--color-navy);
+}
+.deslizador::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-top: calc(-0.5625rem + 1px);
+  border: 2px solid var(--color-navy);
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
+}
+.deslizador::-moz-range-thumb {
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 2px solid var(--color-navy);
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
+}
+.deslizador:hover::-webkit-slider-thumb,
+.deslizador:active::-webkit-slider-thumb { transform: scale(1.25); background: var(--color-navy); }
+.deslizador:hover::-moz-range-thumb,
+.deslizador:active::-moz-range-thumb { transform: scale(1.25); background: var(--color-navy); }
+.deslizador:focus-visible { outline: none; }
+.deslizador:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px var(--color-primary-200); }
+.deslizador:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 4px var(--color-primary-200); }
+
+/* Selector de moneda: subrayado que se dibuja en la opción activa */
+.selector-moneda {
+  background: linear-gradient(currentColor, currentColor) left bottom / 0% 2px no-repeat;
+  transition: background-size 300ms cubic-bezier(0.22, 1, 0.36, 1), color 200ms ease;
+}
+.selector-moneda[aria-pressed="true"] { background-size: 100% 2px; }
+
+/* Reparto: la ganancia de una venta dividida en tantas partes como consultas cuesta.
+   --porcion es el ancho de una consulta; las marcas y la porción resaltada lo siguen. */
+.reparto {
+  position: relative;
+  height: 3.5rem;
+  overflow: hidden;
+  background: var(--color-navy);
+}
+.reparto-una {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--porcion);
+  background: var(--color-cta-500);
+  transition: width 450ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reparto-marcas {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(90deg, transparent calc(100% - 1px), rgb(255 255 255 / 0.3) 0);
+  background-size: var(--porcion) 100%;
+  transition: background-size 450ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-reveal][data-oculto] .reparto-una { width: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .reparto-una, .reparto-marcas, .selector-moneda, .deslizador::-webkit-slider-thumb { transition: none; }
+}

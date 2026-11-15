@@ -138,7 +138,7 @@ export const metodologiaData: MetodologiaDiscipline[] = [
           "Prueba social (Social Proof): testimonios, logos de clientes, contadores de resultados.",
           "Escasez y urgencia (Scarcity): plazas limitadas, disponibilidad por tiempo acotado.",
           "Efecto ancla (Anchoring): mostrar el precio más alto primero para que el siguiente parezca razonable.",
-          "Reciprocidad: ofrecer algo de valor (diagnóstico gratuito) antes de pedir el contacto.",
+          "Reciprocidad: ofrecer algo de valor (un diagnóstico) antes de pedir el contacto.",
           "Autoridad: certificaciones, casos de estudio con números reales, fotografías del equipo.",
           "Reducción de fricción: minimizar campos de formulario, eliminar distracciones de navegación.",
         ],

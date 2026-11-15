@@ -12,6 +12,7 @@ const navLinks = [
   { name: "Inicio", href: "/" },
   { name: "Marketing Digital", href: "/marketingdigital" },
   { name: "Metodología", href: "/metodologia", hasDropdown: true },
+  { name: "Casos de éxito", href: "/casos-de-exito" },
   { name: "Nosotros", href: "/nosotros" },
   // { name: "Testimonios", href: "/testimonios" },
 ];
@@ -51,13 +52,13 @@ export function Navbar() {
           </Link>
 
     
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <div key={link.name} className={cn("relative", link.hasDropdown ? "group" : "")}>
                 <Link
                   href={link.href}
                   className={cn(
-                    "flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary-700 py-6", // py-6 adds a hover bridge to the dropdown
+                    "flex items-center gap-1 whitespace-nowrap text-sm font-medium transition-colors hover:text-primary-700 py-6", // py-6 adds a hover bridge to the dropdown
                     pathname === link.href || (link.hasDropdown && pathname.startsWith("/metodologia"))
                       ? "text-primary-700 font-semibold"
                       : "text-slate-500"
@@ -107,7 +108,7 @@ export function Navbar() {
           </nav>
 
           <button
-            className="md:hidden p-2 -mr-2 text-primary-800"
+            className="lg:hidden p-2 -mr-2 text-primary-800"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -118,7 +119,7 @@ export function Navbar() {
 
       <div
         className={cn(
-          "md:hidden absolute top-full left-0 w-full bg-white border-b border-primary-100 shadow-lg transition-all duration-300 ease-in-out origin-top",
+          "lg:hidden absolute top-full left-0 w-full bg-white border-b border-primary-100 shadow-lg transition-all duration-300 ease-in-out origin-top",
           mobileMenuOpen ? "max-h-[85vh] overflow-y-auto opacity-100" : "max-h-0 overflow-hidden opacity-0 border-transparent"
         )}
       >

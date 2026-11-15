@@ -278,7 +278,7 @@ export function CaseStudiesSection() {
               </p>
               <h2
                 id="case-studies-heading"
-                className="text-4xl sm:text-5xl font-extrabold text-navy tracking-tight leading-[1.05]"
+                className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight text-navy"
               >
                 Resultados medidos en <span className="text-primary-600">ventas</span>, no en likes.
               </h2>
@@ -408,7 +408,7 @@ export function CaseStudiesSection() {
           <p className="text-xs font-semibold tracking-[0.2em] uppercase text-cta-500 mb-4">
             Producción audiovisual
           </p>
-          <h2 id="videos-heading" className="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">
+          <h2 id="videos-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight text-navy">
             Videos que hicimos para nuestros clientes
           </h2>
           <p className="mt-4 text-slate-500 max-w-2xl mx-auto">
